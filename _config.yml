@@ -1,10 +1,11 @@
-title: Immaculate
+title: Hernan Payrumani
 description: >
-  A beautiful, fast, AMP-compliant Jekyll theme based on Tufte CSS.
-url: "https://github.com/siawyoung/immaculate"
-paginate:	2 # The number of posts to show per page on your homepage
-name: "Lau Siaw Young"
+  Software engineer at LandingAI, educator, and algorithms enthusiast. Opinions are my own.
+url: "https://hrnn.github.io"
+paginate:	3 # The number of posts to show per page on your homepage
+name: "Hernan Payrumani"
 markdown: kramdown
+excerpt_separator: "<!-- more -->"
 permalink: none
 kramdown:
   parse_block_html: true
