@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  jekyll:
+    image: jekyll/jekyll:3.8
+    container_name: immaculate-jekyll
+    environment:
+      - JEKYLL_ENV=development
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/srv/jekyll
+      - ./vendor/bundle:/usr/local/bundle
+    command: jekyll serve --host 0.0.0.0 --livereload --force_polling

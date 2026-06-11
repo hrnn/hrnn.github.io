@@ -164,6 +164,17 @@ Immaculate supports syntax highlighting, but the stylesheet is commented out by 
 // @import 'syntax-highlighting';
 ```
 
+## Local WebP AI autocrop
+
+Use the Docker wrapper to crop WebP images locally with the AI Image Cropper CLI:
+
+```bash
+scripts/autocrop-webp-docker.sh assets/images/foo
+scripts/autocrop-webp-docker.sh assets/images/foo assets/images/foo/cropped --object person --padding 10
+```
+
+The script builds `local/ai-image-cropper-cli:latest` from `Dockerfile.ai-image-cropper-cli` when needed, reads `.webp` files from the input folder, and writes cropped WebP files to a separate output folder. Originals are not changed. The first run may download large AI model files; model and package caches are kept in Docker volumes for reuse.
+
 ## FAQ
 
 *How can I use the sans-serif versin of Tufte CSS, which uses Gill Sans?*

@@ -1,0 +1,36 @@
+FROM python:3.12-slim
+
+WORKDIR /opt/ai-image-cropper-v2
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    bash \
+    ca-certificates \
+    curl \
+    git \
+    libgl1 \
+    libglib2.0-0 \
+    libgomp1 \
+    libsm6 \
+    libxext6 \
+    libxrender1 \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY --from=ghcr.io/astral-sh/uv:0.7.3 /uv /usr/local/bin/uv
+
+RUN git clone --depth 1 https://github.com/garystafford/ai-image-cropper-v2.git . \
+    && python -c 'from pathlib import Path; p = Path("pyproject.toml"); s = p.read_text(); s = s.replace("pytorch-cu121", "pytorch-cpu").replace("https://download.pytorch.org/whl/cu121", "https://download.pytorch.org/whl/cpu"); p.write_text(s)'
+
+RUN uv sync --no-dev --no-cache
+
+RUN mkdir -p /cache /opt/ai-image-cropper-v2/backend/models \
+    && chmod -R 777 /cache /opt/ai-image-cropper-v2/backend/models
+
+ENV PYTHONUNBUFFERED=1 \
+    UV_LINK_MODE=copy \
+    MPLCONFIGDIR=/cache/matplotlib \
+    TORCH_HOME=/cache/torch \
+    HF_HOME=/cache/huggingface \
+    YOLO_CONFIG_DIR=/tmp \
+    XDG_CACHE_HOME=/cache
+
+ENTRYPOINT ["uv", "run", "crop-cli"]
