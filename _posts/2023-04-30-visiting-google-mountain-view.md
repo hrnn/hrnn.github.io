@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Google Mountain View Campus
+description: A short visit to Google's Mountain View campus with a friend, and personal reflections on seeing an important place in software and the web.
+image: /assets/images/2023-04-30-google-mountain-view-campus/IMG_20230427_212453.webp
 ---
 
 This was my first visit to Google's Mountain View offices. My friend [Mauricio Poppe](https://www.mauriciopoppe.com/) invited me, and I was happy to see one of the places that is very important in software and the web.

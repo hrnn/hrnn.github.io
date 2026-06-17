@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Stanford Campus and The Dish
+description: A visit to Stanford campus and the Stanford Dish, connected to machine learning, Andrew Ng's courses, and my path as a software engineer.
+image: /assets/images/2023-05-12-stanford-campus-and-the-dish/PXL_20230509_225104330.webp
 ---
 
 I visited Stanford campus and the Stanford Dish area. This visit was special for me because Stanford is connected in my mind with machine learning, deep learning, and some of the courses that helped me in my work.

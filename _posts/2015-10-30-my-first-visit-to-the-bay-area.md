@@ -1,6 +1,8 @@
 ---
 layout: post
 title: First Time in the Bay Area
+description: My first trip to the Bay Area, with memories from San Francisco, Pier 39, Fisherman's Wharf, Alcatraz, and early Silicon Valley impressions.
+image: /assets/images/2015-10-30-first-time-in-the-bay-area/mg-1889.jpg
 ---
 
 This was my first visit to the Bay Area. I landed at San Francisco Airport and stayed in Redwood City, but the city I remember the most from that trip is San Francisco.

@@ -2,6 +2,8 @@ title: Hernan Payrumani
 description: >
   Software engineer at LandingAI, educator, and algorithms enthusiast. Opinions are my own.
 url: "https://hrnn.github.io"
+baseurl: ""
+default_image: /assets/photos/IMG_20230119_164245.jpg
 paginate:	3 # The number of posts to show per page on your homepage
 name: "Hernan Payrumani"
 markdown: kramdown

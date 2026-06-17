@@ -2,6 +2,7 @@
 layout: page
 title: Gestión de Proyectos de Software
 permalink: /classes/gestion-proyectos-software/
+description: Curso de gestión de proyectos de software sobre planificación, estimación, riesgos, calidad y metodologías ágiles y tradicionales.
 ---
 
 [← Volver a Classes](/classes/)

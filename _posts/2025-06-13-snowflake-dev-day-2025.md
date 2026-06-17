@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Snowflake Dev Day 2025
+description: Notes and photos from Snowflake Dev Day 2025 at Moscone Center, with developer talks about data, AI, applications, and Snowflake's AI Data Cloud.
+image: /assets/images/2025-06-13-snowflake-dev-day-2025/IMG_1582.webp
 ---
 
 In June 2025, I went to Snowflake Dev Day at Moscone Center in San Francisco. The event was part of Snowflake Summit 2025, and it focused on developers building with data, AI, and applications.

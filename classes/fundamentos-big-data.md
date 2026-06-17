@@ -2,6 +2,7 @@
 layout: page
 title: Fundamentos de Big Data
 permalink: /classes/fundamentos-big-data/
+description: Curso de postgrado sobre Big Data, Hadoop, Spark, NoSQL, arquitecturas de datos distribuidos y procesamiento paralelo.
 ---
 
 [← Volver a Classes](/classes/)

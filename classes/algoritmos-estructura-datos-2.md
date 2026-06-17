@@ -2,6 +2,7 @@
 layout: page
 title: Algoritmos y Estructura de Datos 2
 permalink: /classes/algoritmos-estructura-datos-2/
+description: Curso avanzado de algoritmos y estructuras de datos, con árboles, grafos, tablas hash, ordenamiento avanzado y programación dinámica.
 ---
 
 [← Volver a Classes](/classes/)

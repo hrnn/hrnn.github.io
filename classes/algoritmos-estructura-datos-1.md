@@ -2,6 +2,7 @@
 layout: page
 title: Algoritmos y Estructura de Datos 1
 permalink: /classes/algoritmos-estructura-datos-1/
+description: Curso de algoritmos y estructuras de datos básicas, con programación, análisis de complejidad, arreglos, listas enlazadas, pilas y colas.
 ---
 
 [← Volver a Classes](/classes/)

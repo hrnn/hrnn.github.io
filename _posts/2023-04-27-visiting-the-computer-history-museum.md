@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Computer History Up Close
+description: Notes and photos from the Computer History Museum in Mountain View, with machines, terminals, manuals, and computing history on display.
+image: /assets/images/2023-04-27-computer-history-up-close/PXL_20230427_221730586.webp
 ---
 
 I visited the Computer History Museum again. My first visit was in 2015, but I lost the pictures from that day and only had about one hour inside. This time I stayed for more than two hours, so I could enjoy the museum much more.

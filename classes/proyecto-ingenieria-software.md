@@ -2,6 +2,7 @@
 layout: page
 title: Proyecto de Ingeniería de Software
 permalink: /classes/proyecto-ingenieria-software/
+description: Curso práctico de ingeniería de software donde los estudiantes diseñan, implementan y despliegan un sistema completo en equipo.
 ---
 
 [← Volver a Classes](/classes/)

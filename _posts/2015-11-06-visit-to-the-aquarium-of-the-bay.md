@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Sea Life at the Aquarium of the Bay
+description: A visit to Aquarium of the Bay in San Francisco, seeing sea life up close as someone from Bolivia, a landlocked country.
+image: /assets/images/2015-11-06-sea-life-at-the-aquarium-of-the-bay/mg-1890.jpg
 ---
 
 I visited the Aquarium of the Bay in San Francisco, and it was one of the places I enjoyed the most during the trip.

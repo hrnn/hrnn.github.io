@@ -1,30 +1,62 @@
-
+{% assign page_title = page.title | default: site.title %}
+{% assign raw_description = page.description | default: page.excerpt | default: site.description %}
+{% assign seo_description = raw_description | strip_html | strip_newlines | truncate: 160 %}
+{% assign canonical_url = page.url | replace: "index.html", "" | prepend: site.baseurl | prepend: site.url %}
+{% assign preview_image = page.image | default: site.default_image %}
+{% if preview_image %}
+  {% if preview_image contains "://" %}
+    {% assign preview_image_url = preview_image %}
+  {% else %}
+    {% assign preview_image_url = preview_image | prepend: site.baseurl | prepend: site.url %}
+  {% endif %}
+{% endif %}
 {
-  "@context": "http://schema.org",
-  "@type": "NewsArticle",
-  "mainEntityOfPage": "{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}",
-  "headline": "{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}",
-  "datePublished": "{% if page.date %}{{ page.date | date_to_xmlschema }}{% else %}{{ site.time | date_to_xmlschema }}{% endif %}",
-  "dateModified": "{% if page.date %}{{ page.date | date_to_xmlschema }}{% else %}{{ site.time | date_to_xmlschema }}{% endif %}",
-  "description": "{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}",
-  "author": {
-    "@type": "Person",
-    "name": "{{ site.name }}"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "{{ site.title }}",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "{{ site.logo | prepend: site.baseurl | prepend: site.url }}",
-      "width": 60,
-      "height": 60
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#person",
+      "name": {{ site.name | jsonify }},
+      "url": "{{ site.url }}{{ site.baseurl }}/",
+      "jobTitle": "Software Engineer",
+      "homeLocation": {
+        "@type": "Place",
+        "name": "La Paz, Bolivia"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/hernan-payrumani-686714ba",
+        "https://x.com/HernanPayrumani"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#website",
+      "url": "{{ site.url }}{{ site.baseurl }}/",
+      "name": {{ site.title | jsonify }},
+      "description": {{ site.description | strip_newlines | jsonify }},
+      "author": {
+        "@id": "{{ site.url }}{{ site.baseurl }}/#person"
+      }
+    },
+    {
+      "@type": "{% if page.layout == "post" %}BlogPosting{% else %}WebPage{% endif %}",
+      "@id": "{{ canonical_url }}#webpage",
+      "url": "{{ canonical_url }}",
+      "isPartOf": {
+        "@id": "{{ site.url }}{{ site.baseurl }}/#website"
+      },
+      "name": {{ page_title | jsonify }},
+      "headline": {{ page_title | jsonify }},
+      "description": {{ seo_description | jsonify }},
+      "author": {
+        "@id": "{{ site.url }}{{ site.baseurl }}/#person"
+      }{% if preview_image_url %},
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{ preview_image_url }}"
+      }{% endif %}{% if page.layout == "post" and page.date %},
+      "datePublished": "{{ page.date | date_to_xmlschema }}",
+      "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}"{% endif %}
     }
-  },
-  "image": {
-    "@type": "ImageObject",
-    "url": "{{ site.logo | prepend: site.baseurl | prepend: site.url }}",
-    "height": 60,
-    "width": 60
-  }
+  ]
 }

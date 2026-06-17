@@ -2,6 +2,8 @@
 layout: page
 title: Classes
 permalink: /classes/
+description: Courses taught by Hernan Payrumani in La Paz, Bolivia, including algorithms, data structures, databases, cloud computing, big data, and software engineering.
+image: /assets/photos/IMG_20230119_164245.jpg
 ---
 
 {% image /assets/photos/IMG_20230119_164245.jpg 993 559 fw %}

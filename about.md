@@ -2,6 +2,8 @@
 layout: page
 title: About
 permalink: /about/
+description: About Hernan Payrumani, a software engineer from La Paz, Bolivia, working in machine learning infrastructure and teaching computer science.
+image: /assets/photos/PXL_20230529_200239900.jpg
 ---
 
 Hi, I’m Hernan — a Software Engineer from La Paz, Bolivia, with a degree in Systems Engineering from the Universidad Católica Boliviana, where I specialized in Computer Science.

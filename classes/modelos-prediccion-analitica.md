@@ -2,6 +2,7 @@
 layout: page
 title: Modelos de predicción analítica
 permalink: /classes/modelos-prediccion-analitica/
+description: Curso de postgrado sobre analítica predictiva y machine learning, con regresión, clasificación, clustering, series temporales y Python.
 ---
 
 [← Volver a Classes](/classes/)

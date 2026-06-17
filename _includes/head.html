@@ -1,14 +1,53 @@
 <head>
+  {% assign page_title = page.title | default: site.title %}
+  {% if page.title and page.title != site.title %}
+    {% assign seo_title = page.title | append: " | " | append: site.title %}
+  {% else %}
+    {% assign seo_title = site.title %}
+  {% endif %}
+  {% assign raw_description = page.description | default: page.excerpt | default: site.description %}
+  {% assign seo_description = raw_description | strip_html | strip_newlines | truncate: 160 %}
+  {% assign canonical_url = page.url | replace: "index.html", "" | prepend: site.baseurl | prepend: site.url %}
+  {% assign preview_image = page.image | default: site.default_image %}
+  {% if preview_image %}
+    {% if preview_image contains "://" %}
+      {% assign preview_image_url = preview_image %}
+    {% else %}
+      {% assign preview_image_url = preview_image | prepend: site.baseurl | prepend: site.url %}
+    {% endif %}
+  {% endif %}
+
   <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <title>{{ seo_title | escape }}</title>
+  <meta name="description" content="{{ seo_description | escape }}">
+  <meta name="author" content="{{ site.name | escape }}">
 
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+
+  <meta property="og:site_name" content="{{ site.title | escape }}">
+  <meta property="og:title" content="{{ page_title | escape }}">
+  <meta property="og:description" content="{{ seo_description | escape }}">
+  <meta property="og:url" content="{{ canonical_url }}">
+  <meta property="og:type" content="{% if page.layout == "post" %}article{% else %}website{% endif %}">
+  {% if preview_image_url %}
+  <meta property="og:image" content="{{ preview_image_url }}">
+  {% endif %}
+  {% if page.layout == "post" and page.date %}
+  <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+  <meta property="article:author" content="{{ site.name | escape }}">
+  {% endif %}
+
+  <meta name="twitter:card" content="{% if preview_image_url %}summary_large_image{% else %}summary{% endif %}">
+  <meta name="twitter:title" content="{{ page_title | escape }}">
+  <meta name="twitter:description" content="{{ seo_description | escape }}">
+  {% if preview_image_url %}
+  <meta name="twitter:image" content="{{ preview_image_url }}">
+  {% endif %}
 
   <script type="application/ld+json">
   {% include metadata.json %}

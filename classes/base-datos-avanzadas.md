@@ -2,6 +2,7 @@
 layout: page
 title: Base de datos Avanzadas
 permalink: /classes/base-datos-avanzadas/
+description: Curso avanzado de bases de datos sobre optimización de consultas, diseño avanzado, bases de datos distribuidas, NoSQL e indexación.
 ---
 
 [← Volver a Classes](/classes/)

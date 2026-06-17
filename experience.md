@@ -2,6 +2,7 @@
 layout: page
 title: Experience
 permalink: /experience/
+description: Hernan Payrumani's software engineering, machine learning infrastructure, engineering leadership, and teaching experience.
 ---
 
 My work has moved between software engineering, machine learning infrastructure, and teaching.

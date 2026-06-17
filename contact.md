@@ -2,6 +2,7 @@
 layout: page
 title: Contact
 permalink: /contact/
+description: Contact links for Hernan Payrumani, including email, LinkedIn, and Twitter/X.
 ---
 
 ## Get in Touch

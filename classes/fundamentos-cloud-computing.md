@@ -2,6 +2,7 @@
 layout: page
 title: Fundamentos de Cloud Computing
 permalink: /classes/fundamentos-cloud-computing/
+description: Curso de computación en la nube sobre AWS, Azure, GCP, servicios cloud, cloud-native, infraestructura como código, contenedores y seguridad.
 ---
 
 [← Volver a Classes](/classes/)
