@@ -2,6 +2,18 @@
 <html ⚡ lang="en">
   {% include head.html %}
   <body>
+    <amp-analytics type="gtag" data-credentials="include">
+      <script type="application/json">
+        {
+          "vars": {
+            "gtag_id": "G-R8L7D0NBPJ",
+            "config": {
+              "G-R8L7D0NBPJ": { "groups": "default" }
+            }
+          }
+        }
+      </script>
+    </amp-analytics>
     {% include header.html %}
 
     {{ content }}
